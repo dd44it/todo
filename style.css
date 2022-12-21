@@ -49,11 +49,11 @@ body.dark {
 }
 
 .light .header {
-  background: url('images/bg-desktop-light.jpg');
+  background-image: url('images/bg-desktop-light.jpg');
 }
 
 .dark .header {
-  background: url('images/bg-desktop-dark.jpg');
+  background-image: url('images/bg-desktop-dark.jpg');
 }
 
 .header-wrapper{
@@ -118,6 +118,10 @@ body.dark {
   outline: none;
 }
 
+.todo{
+  box-shadow: 2px 2px 2px 3px rgb(0 0 0 / 2%);
+}
+
 .todo-items{
   list-style: none;
 }
@@ -128,7 +132,7 @@ body.dark {
   padding: 5px 20px;
   display: flex;
   align-items: center;
-
+  /* jus */
 }
 
 .todo-filter{
@@ -151,13 +155,14 @@ body.dark {
 
 .switch-button .btn-filter{
   margin-right: 20px;
+  font-weight: 600;
 }
 
 .btn-filter{
   background-color: transparent;
   border: none;
-  color: #56509c;
-  cursor: pointer !important;
+  color: #9d95ff;
+  cursor: pointer;
   font-size: 16px;
 }
 
@@ -171,6 +176,39 @@ body.dark {
 }
 
 .count-active-item{
-  color: #56509c;
+  color: #9d95ff;
   font-size: 16px;
+}
+
+.item-radio{
+  flex: 0 1 5%;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.item-text{
+  flex: 0 1 85%;
+  border: none;
+  font-style: 18px;
+  height: 20px;
+}
+
+.item-remove{
+  background: transparent;
+  color: #f2f2f2;
+  font-size: 25px;
+  font-weight: 600;
+  flex: 0 1 10%;
+  cursor: pointer;
+  border: none;
+  display: none;
+}
+
+.item:hover .item-remove{
+  display: block;
+}
+
+.hide{
+  display: none;
 }
