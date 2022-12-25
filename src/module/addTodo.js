@@ -1,9 +1,17 @@
-
+import {showAllTodo, showActiveTodo, showCompletedTodo} from './filterButtons.js'
 
 export default function addTodo(){
   const input = document.querySelector('.search')
   const listTodo = document.querySelector('.todo-items')
   const filterBlock = document.querySelector('.todo-filter')
+  const allBtn = document.querySelector('.all-btn')
+  const activeBtn = document.querySelector('.active-btn')
+  const completedBtn = document.querySelector('.completed-btn')
+  const countAddedTodo = document.querySelector('.count-active-item .count')
+
+  const configTodo = {
+    id: 1
+  }
 
   input.addEventListener('keydown', e => {
     const elem = e.target
@@ -44,6 +52,8 @@ export default function addTodo(){
 
       elem.value = ''
       removeClassHide(listTodo.childElementCount)
+      countAddedTodo.textContent = configTodo.id
+      configTodo.id += 1
     }
 
     function removeClassHide(countListTodo){
@@ -51,4 +61,8 @@ export default function addTodo(){
     }
 
   })
+
+  allBtn.addEventListener('click', e => { showAllTodo(e, '.item') })
+  activeBtn.addEventListener('click', e => { showActiveTodo(e, '.item') })
+  completedBtn.addEventListener('click', e => { showCompletedTodo(e, '.item') })
 }
