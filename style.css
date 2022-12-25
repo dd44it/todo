@@ -144,6 +144,8 @@ body.dark {
 
 .count-active-item{
   flex: 0 1 30%;
+  color: #9d95ff;
+  font-size: 16px;
 }
 
 .filter-buttons{
@@ -166,18 +168,13 @@ body.dark {
   font-size: 16px;
 }
 
-.btn-filter.active,
-.btn-filter.active:hover{
+.btn-filter.active-filter,
+.btn-filter.active-filter:hover{
   color: rgb(106 139 255);
 }
 
 .btn-filter:hover{
   color: #f2f2f2;
-}
-
-.count-active-item{
-  color: #9d95ff;
-  font-size: 16px;
 }
 
 .item-radio{
@@ -212,3 +209,5 @@ body.dark {
 .hide{
   display: none;
 }
+
+
