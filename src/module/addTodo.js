@@ -29,13 +29,16 @@ export default function addTodo(){
       const inputCheckboxList = document.querySelectorAll('.item-radio')
       const btnRemoveList = document.querySelectorAll('.item-remove')
 
-      btnRemoveList.forEach(remove => {
+      for(let remove of btnRemoveList){
         remove.addEventListener('click', (e) => {
+          e.stopImmediatePropagation()
           const todoItem = e.target.parentElement
           todoItem.remove()
           removeClassHide(listTodo.childElementCount)
+          configTodo.id -= 1
+          countAddedTodo.textContent = configTodo.id
         })
-      })
+      }
 
       inputCheckboxList.forEach(checkbox => {
         checkbox.addEventListener('input', (e) => {
